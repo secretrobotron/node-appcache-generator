@@ -25,7 +25,7 @@ exports.appcache = {
     var output = generator.generate();
     test.ok(output.length > 0);
     test.ok(output.indexOf('CACHE MANIFEST') !== -1);
-    test.ok(output.indexOf('version') !== -1);
+    test.ok(output.indexOf('Checksum') !== -1);
     test.ok(output.indexOf('CACHE:') !== -1);
     test.ok(output.indexOf('NETWORK:') !== -1);
     test.ok(output.indexOf('FALLBACK:') !== -1);
@@ -85,26 +85,17 @@ exports.appcache = {
       this.fallback);
     var output = generator.generate();
 
-    var VERSION = 'version ';
+    var checksum = 'Checksum ';
 
-    var indexVersion = output.indexOf(VERSION);
+    var indexVersion = output.indexOf(checksum);
     test.ok(indexVersion > -1);
     var indexNL = output.indexOf(generator.NL, indexVersion);
     test.ok(indexNL > -1);
-    var start = indexVersion + VERSION.length;
+    var start = indexVersion + checksum.length;
     var length = indexNL - start;
+
     test.ok(length > 0);
-    var manifestVersion = output.substr(start, length);
 
-    var date = new Date(manifestVersion);
-    var now = new Date();
-
-    test.ok(date.year === now.year);
-    test.ok(date.month === now.moth);
-    test.ok(date.day === date.day);
-
-    // Difference between dates shouldn't be that big
-    test.ok((now.getTime() - date.getTime()) < 5 * 1000);
     test.done();
   },
   recursive: function(test) {
@@ -124,7 +115,7 @@ exports.appcache = {
     generator.generateFromDir(dir, function(err, output) {
       test.ok(output.length > 0);
       test.ok(output.indexOf('CACHE MANIFEST') !== -1);
-      test.ok(output.indexOf('version') !== -1);
+      test.ok(output.indexOf('Checksum') !== -1);
       test.ok(output.indexOf('CACHE:') !== -1);
       test.ok(output.indexOf('NETWORK:') !== -1);
       test.ok(output.indexOf('FALLBACK:') !== -1);

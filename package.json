@@ -1,10 +1,12 @@
 {
   "name": "node-appcache-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/node-appcache-generator.js",
   "description": "Simple node module to generate APPCACHE files from a directory",
-  "homepage": "https://github.com/arcturus/node-appcache-generator",
-  "bugs": "https://github.com/arcturus/node-appcache-generator/issues",
+  "homepage": "https://github.com/secretrobotron/node-appcache-generator",
+  "bugs": {
+    "url": "https://github.com/secretrobotron/node-appcache-generator/issues"
+  },
   "author": {
     "name": "Francisco Jordano",
     "email": "francisco@jordano.es",
@@ -12,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arcturus/node-appcache-generator"
+    "url": "https://github.com/secretrobotron/node-appcache-generator"
   },
   "licenses": [
     {
       "type": "MPL 2.0",
-      "url": "https://github.com/arcturus/node-appcache-generator/blob/master/LICENSE"
+      "url": "https://github.com/secretrobotron/node-appcache-generator/blob/master/LICENSE"
     }
   ],
   "scripts": {
@@ -41,5 +43,13 @@
     "jshint-stylish": "~0.1.3",
     "grunt": "*",
     "proxyquire": "0.5.1"
-  }
+  },
+  "readme": "node-appcache-generator\n=======================\n\nCLI\n---\n\n```\n$node-appcache\n\n  Usage: node-appcache [options]\n\n  Options:\n\n    -h, --help                   output usage information\n    -V, --version                output the version number\n    -m, --manifest <manifest>    specify the manifest file name [manifest appcache]\n    -d, --directory <directory>  directory to build the manifest from [.]\n    -n, --network <network>      file containing the network rules\n    -f, --fallback <fallback>    file containing the fallback rules\n\n```\n\nBuild status\n------------\n\n[![Status](https://secure.travis-ci.org/secretrobotron/node-appcache-generator.png?branch=master)](http://travis-ci.org/secretrobotron/node-appcache-generator)\n\n\nTODO\n----\n\n- Validator",
+  "readmeFilename": "README.md",
+  "_id": "node-appcache-generator@0.0.2",
+  "dist": {
+    "shasum": "969c432d1691f60227874227d7e65f333a6c604e"
+  },
+  "_from": "node-appcache-generator@",
+  "_resolved": "https://registry.npmjs.org/node-appcache-generator/-/node-appcache-generator-0.0.2.tgz"
 }
