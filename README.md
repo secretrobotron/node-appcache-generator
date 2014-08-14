@@ -15,8 +15,9 @@ $node-appcache
     -V, --version                output the version number
     -m, --manifest <manifest>    specify the manifest file name [manifest appcache]
     -d, --directory <directory>  directory to build the manifest from [.]
-    -n, --network <network>      file containing the network rules
-    -f, --fallback <fallback>    file containing the fallback rules
+    -n, --network <network>      comma-separated list of network locations
+    -f, --fallback <fallback>    comma-separated list of fallback files
+    -h, --hidden <hidden>        includes hidden files (like .DS_Store, .gitignore, etc.)
 
 ```
 

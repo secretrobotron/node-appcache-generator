@@ -19,7 +19,7 @@ program
   .option('-d, --directory <directory>', 'directory to build the manifest from [.]', String, '.')
   .option('-n, --network <network>', 'comma-separated list of network locations', readList, [])
   .option('-f, --fallback <fallback>', 'comma-separated list of fallback files', readList, [])
-  .option('-h, --hidden <hidden>', 'includes hidden files (like .DS_Store, .gitignore, etc.)')
+  .option('-h, --hidden', 'includes hidden files (like .DS_Store, .gitignore, etc.)')
   .parse(process.argv);
 
 if (process.argv.length == 2) {
@@ -27,7 +27,7 @@ if (process.argv.length == 2) {
 }
 
 
-var generator = new nodeAppCache.Generator(null, program.network, program.fallback);
+var generator = new nodeAppCache.Generator(null, program.network, program.fallback, program.hidden);
 generator.generateFromDir(program.directory, function(err, content) {
   fs.writeFile(program.manifest, content, function(err2) {
       if(err2) {
